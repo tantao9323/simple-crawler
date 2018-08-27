@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simple-crawler</title>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:9090',
+                success: function (res) {
+                    var template = '';
+                    for (var i = 0; i < res.length; i++) {
+                        template += '<ul>';
+                        for (var j = 0; j < res[i].length; j++) {
+                            template +=
+                                `<li>${res[i][j].title} <a href='${res[i][j].href}' target='_blank'>${res[i][j].href}</a></li>`;
+                        }
+                        template += '</ul>';
+                    }
+                    $('.content').html(template);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

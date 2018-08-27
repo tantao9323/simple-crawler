@@ -1,0 +1,18 @@
+{
+  "name": "simple-crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "nodemon ./index.js"
+  },
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "async": "^2.6.1",
+    "cheerio": "^1.0.0-rc.2",
+    "nodemon": "^1.18.3",
+    "superagent": "^3.8.3",
+    "superagent-charset": "^1.2.0"
+  }
+}
